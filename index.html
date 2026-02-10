@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Exam Preparation - MCQ Practice</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AWS Exam Preparation</h1>
+            <p class="subtitle">Master AWS with 1000 practice questions across 20 sets</p>
+        </header>
+        
+        <main>
+            <div class="sets-grid" id="setsGrid">
+                <!-- Sets will be generated dynamically -->
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 AWS MCQ Practice. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script src="questions.js"></script>
+    <script src="app.js"></script>
+    <script>
+        // Generate set cards on home page
+        const setsGrid = document.getElementById('setsGrid');
+        
+        for (let i = 1; i <= 20; i++) {
+            const setCard = document.createElement('div');
+            setCard.className = 'set-card';
+            setCard.innerHTML = `
+                <div class="set-number">Set ${i}</div>
+                <div class="set-info">50 Questions</div>
+                <button class="btn btn-primary" onclick="navigateToSet(${i})">Start Practice</button>
+            `;
+            setsGrid.appendChild(setCard);
+        }
+        
+        function navigateToSet(setNumber) {
+            window.location.href = `set.html?set=${setNumber}`;
+        }
+    </script>
+</body>
+</html>
