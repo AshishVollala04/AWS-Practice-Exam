@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Practice Set</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <button class="btn btn-secondary" onclick="goHome()">← Back to Sets</button>
+                <h1 id="setTitle">Set 1</h1>
+            </div>
+        </header>
+        
+        <main>
+            <!-- Pre-test view -->
+            <div id="preTestView" class="pre-test-view">
+                <div class="test-info-card">
+                    <h2>Ready to Start?</h2>
+                    <div class="test-details">
+                        <p><strong>Total Questions:</strong> 50</p>
+                        <p><strong>Time:</strong> No time limit</p>
+                        <p><strong>Pass Mark:</strong> 70% (35/50)</p>
+                    </div>
+                    <button class="btn btn-primary btn-large" onclick="startTest()">Start Test</button>
+                </div>
+            </div>
+            
+            <!-- Test view -->
+            <div id="testView" class="test-view" style="display: none;">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text" id="progressText">Question 1 of 50</div>
+                
+                <div id="questionsContainer" class="questions-container">
+                    <!-- Questions will be loaded here -->
+                </div>
+                
+                <div class="test-controls">
+                    <button class="btn btn-success btn-large" onclick="submitTest()">Submit Test</button>
+                </div>
+            </div>
+            
+            <!-- Result view -->
+            <div id="resultView" class="result-view" style="display: none;">
+                <div class="result-card">
+                    <h2 id="resultTitle">Test Results</h2>
+                    <div class="result-stats">
+                        <div class="stat-item">
+                            <div class="stat-value" id="scoreValue">0</div>
+                            <div class="stat-label">Score</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="percentageValue">0%</div>
+                            <div class="stat-label">Percentage</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="correctValue">0</div>
+                            <div class="stat-label">Correct</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="wrongValue">0</div>
+                            <div class="stat-label">Wrong</div>
+                        </div>
+                    </div>
+                    
+                    <div id="resultMessage" class="result-message"></div>
+                    
+                    <div id="reviewContainer" class="review-container">
+                        <!-- Detailed review will be shown here -->
+                    </div>
+                    
+                    <div class="result-actions">
+                        <button class="btn btn-primary" onclick="retakeTest()">Retake Test</button>
+                        <button class="btn btn-secondary" onclick="goHome()">Back to Sets</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="questions.js?v=2"></script>
+    <script src="app.js?v=2"></script>
+</body>
+</html>
+
+<!--Start-Process "index.html"-->
